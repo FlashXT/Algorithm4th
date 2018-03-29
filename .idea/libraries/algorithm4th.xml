@@ -1,13 +1,7 @@
 <component name="libraryTable">
   <library name="algorithm4th">
-    <CLASSES>
-      <root url="file://C:/Program Files/Java/algorithm4th" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC />
-    <SOURCES>
-      <root url="file://C:/Program Files/Java/algorithm4th" />
-    </SOURCES>
-    <jarDirectory url="file://C:/Program Files/Java/algorithm4th" recursive="false" />
-    <jarDirectory url="file://C:/Program Files/Java/algorithm4th" recursive="false" type="SOURCES" />
+    <SOURCES />
   </library>
 </component>
