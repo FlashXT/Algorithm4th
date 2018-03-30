@@ -16,10 +16,10 @@ public class recursionBinarySearch {
     public static int BinarySearch(int []a,int low,int high,int key,int count){
         System.out.printf("%d>>>\t",++count);
         System.out.println(low+"   "+high);
-        if(low > high) return -1;
+        if(low > high)           return -1;
         int mid = (low+high)/2;
-        if(key == a[mid]) return key;
-        else if(key < a[mid]) return BinarySearch(a,low,mid-1,key,count);
-        else return BinarySearch(a,mid+1,high,key,count);
+        if       (key == a[mid]) return key;
+        else if  (key < a[mid])  return BinarySearch(a,low,mid-1,key,count);
+        else                     return BinarySearch(a,mid+1,high,key,count);
     }
 }

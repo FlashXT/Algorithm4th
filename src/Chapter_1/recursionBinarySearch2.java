@@ -29,11 +29,11 @@ public class recursionBinarySearch2 {
     }
 
     public static int BinarySearchBase(int []a,int low,int high,int key){
-        if(low > high) return -1;
+        if(low > high)            return -1;
         int mid = (low+high)/2;
-        if(key == a[mid]) return key;
-        else if(key < a[mid]) return BinarySearchBase(a,low,mid-1,key);
-        else return BinarySearchBase(a,mid+1,high,key);
+        if        (key == a[mid]) return key;
+        else if   (key < a[mid])  return BinarySearchBase(a,low,mid-1,key);
+        else                      return BinarySearchBase(a,mid+1,high,key);
     }
 }
 
