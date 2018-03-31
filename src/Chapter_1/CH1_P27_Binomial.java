@@ -11,15 +11,15 @@ public class CH1_P27_Binomial {
     public static double count=0;
     public static void main(String [] args){
 
-        StdOut.println("N\t\tk\t\tcount");
-        binomial(100,10,0.25);
-        StdOut.println("10\t\t5\t\t"+count);
-//        binomial(100,10,0.25,count);
-//        StdOut.println("100\t10\t"+count);
-//        binomial(100,20,0.25,count);
-//        StdOut.println("100\t20\t"+count);
-//        binomial(100,30,0.25,count);
-//        StdOut.println("100\t30\t"+count);
+        StdOut.println("N\tk\tcount");
+        binomial(10,5,0.25);
+        StdOut.println("10\t5\t"+count);
+        binomial(20,5,0.25);
+        StdOut.println("20\t5\t"+count);
+        binomial(30,10,0.25);
+        StdOut.println("30\t20\t"+count);
+        binomial(30,20,0.25);
+        StdOut.println("30\t30\t"+count);
     }
     public static double binomial(int N,int k,double p){
         count++;
