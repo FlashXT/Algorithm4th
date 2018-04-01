@@ -1,3 +1,8 @@
+/*BinarySearch循环版，需要在命令行编译运行：
+*①javac-algs4 BinarySearch.java
+*②java-algs4 BinarySearch TinyW.txt,然后输入key,进行查找
+*③java-algs4 BinarySearch TinyW.txt < TinyT.txt ，进行查找
+*/
 package Chapter_1;
 import java.util.Arrays;
 import edu.princeton.cs.algs4.*;
