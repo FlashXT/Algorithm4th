@@ -2,7 +2,7 @@
  * Author:FlashXT
  * Date:2018.3.31,Saturday；
  * */
-package Chapter_1;
+package Chapter_1.Part1;
 
 import edu.princeton.cs.algs4.StdOut;
 public class CH1_P27_Binomial3 {

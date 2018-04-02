@@ -3,7 +3,7 @@
 *②java-algs4 BinarySearch TinyW.txt,然后输入key,进行查找
 *③java-algs4 BinarySearch TinyW.txt < TinyT.txt ，进行查找
 */
-package Chapter_1;
+package Chapter_1.Part1;
 import java.util.Arrays;
 import edu.princeton.cs.algs4.*;
 public class BinarySearch {

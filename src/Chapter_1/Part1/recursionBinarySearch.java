@@ -2,7 +2,7 @@
 * Author:FlashXT
 * Date:2018.3.28,wednesday
 * */
-package Chapter_1;
+package Chapter_1.Part1;
 import java.util.*;
 public class recursionBinarySearch {
     public static void main(String [] args){
