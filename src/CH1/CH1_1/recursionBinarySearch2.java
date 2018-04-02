@@ -1,7 +1,7 @@
 /*Algorithm4th,CH1_P1.1.23,BinarySearch修改版，
  * */
 
-package Chapter_1.Part1;
+package CH1.CH1_1;
 import java.util.*;
 public class recursionBinarySearch2 {
     public static void main(String [] args){

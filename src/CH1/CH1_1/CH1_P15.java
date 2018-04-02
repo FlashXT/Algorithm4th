@@ -1,4 +1,4 @@
-package Chapter_1.Part1;
+package CH1.CH1_1;
 
 public class CH1_P15 {
     public static void main(String [] args){

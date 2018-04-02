@@ -2,7 +2,7 @@
  * Author:FlashXT
  * Date:2018.3.30,Friday
  * */
-package Chapter_1.Part1;
+package CH1.CH1_1;
 
 
 import edu.princeton.cs.algs4.StdOut;
