@@ -21,17 +21,22 @@ public class Evaluate {
         char ch;
         while(i < str.length()){
             ch = str.charAt(i);
-            if(ch == '(') ;
+            if(ch == '(') ops.push(ch);
             else if (ch == '+'|| ch == '-'|| ch == '*'|| ch == '/') ops.push(ch);
             else if(ch == ')')
             {
-                char op=ops.pop();
-                double v1=vals.pop();
-                double v2=vals.pop();
-                if (op == '+')         vals.push(v1+v2);
-                else if (op == '-')    vals.push(v1-v2);
-                else if (op == '*')    vals.push(v1*v2);
-                else if (op == '/')    vals.push(v1/v2);
+                ch=ops.pop();
+                while(ch != '('){
+                    double v1=vals.pop();
+                    double v2=vals.pop();
+                    if (ch == '+')         vals.push(v1+v2);
+                    else if (ch == '-')    vals.push(v1-v2);
+                    else if (ch == '*')    vals.push(v1*v2);
+                    else if (ch == '/')    vals.push(v1/v2);
+                    ch=ops.pop();
+                }
+
+
             }
             else vals.push((double)ch-48);
             i++;
