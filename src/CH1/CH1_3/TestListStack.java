@@ -38,7 +38,7 @@ public class TestListStack {
             }
             for(;k<8;k++) StdOut.printf("\t");
             StdOut.printf("栈长度：%s",s.size());
-            StdOut.println("\n====================================");
+            StdOut.println("\n------------------------------------");
             i++;
 
         }

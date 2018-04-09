@@ -9,6 +9,8 @@ import java.util.Iterator;
 public class ListStack<Item> implements  Iterable<Item> {
     private Node first;
     private int N;
+    //私有嵌套类的一个特点是只有包含它的类能够直接访问它的实例变量，
+    //因此无需将它的实例变量声明为public 或者private;
     private class Node{
         Item item;
         Node next;
