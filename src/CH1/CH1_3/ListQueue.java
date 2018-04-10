@@ -33,6 +33,11 @@ public class ListQueue<Item> implements  Iterable<Item>  {
         return item;
 
     }
+    //获取队头元素
+    public Item peek(){
+        if(isEmpty()) throw new RuntimeException("Stack underflow");
+        return first.item;
+    }
     //迭代
     public Iterator<Item> iterator(){ return new ListIterator();}
     private class ListIterator implements Iterator<Item>{

@@ -14,43 +14,47 @@ import java.util.Scanner;
 public class CH1_3_P4MatchBrackets {
 
         public static void main(String [] args){
-            ListStack<String> s = new ListStack<String>();
+            ListStack<Character> s = new ListStack<Character>();
 
             StdOut.printf("请输入括号串：");
             Scanner scan = new Scanner(System.in);
             String str = scan.nextLine();
-            String [] str2 = str.split(" ");
-            int i = 0,k = 0;String rbrackets ="";
+            char [] str2 = new char[str.length()];
+            for(int j =0;j < str.length();j++) str2[j] = str.charAt(j);
+           // String [] str2 = str.split(" ");
+            int i = 0,k = 0;char rbrackets;
             while(i < str2.length){
-                if(str2[i].equals("(")||str2[i].equals("{")||str2[i].equals("[")){
+                if(str2[i]=='('||str2[i]=='{'||str2[i]=='['){
                     StdOut.println("入栈："+str2[i]);
                     s.push(str2[i]);
                 }
 
                 else  {
-                    if(str2[i].equals(")")){
+                    if(str2[i]==')'){
                         rbrackets = s.pop();
-                        if(rbrackets.equals("(")) ;
+                        if(rbrackets=='(') ;
                         else s.push(rbrackets);
                     }
-                    else if(str2[i].equals("]")){
-                        if(rbrackets.equals("[")) ;
+                    else if(str2[i]==']'){
+                        rbrackets = s.pop();
+                        if(rbrackets=='[') ;
                         else s.push(rbrackets);
                     }
                     else{
-                        if(rbrackets.equals("{")) ;
+                        rbrackets = s.pop();
+                        if(rbrackets=='{') ;
                         else s.push(rbrackets);
                     }
                 }
                 StdOut.println("====================================");
                 StdOut.println("栈中内容：");
-                Iterator<String> iterator = s.iterator();
+                Iterator<Character> iterator = s.iterator();
                 k = 0;
                 while(iterator.hasNext()){
                     StdOut.printf("%s ",iterator.next());
                     k++;
                 }
-                for(;k<8;k++) StdOut.printf("\t");
+                for(;k<7;k++) StdOut.printf("\t");
                 StdOut.printf("栈长度：%s",s.size());
                 StdOut.println("\n------------------------------------");
                 i++;

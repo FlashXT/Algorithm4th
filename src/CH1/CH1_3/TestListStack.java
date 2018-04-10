@@ -42,6 +42,6 @@ public class TestListStack {
             i++;
 
         }
-
+     StdOut.println(s.peek());
     }
 }

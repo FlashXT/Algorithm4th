@@ -16,10 +16,10 @@ public class ListStack<Item> implements  Iterable<Item> {
         Node next;
 
     }
-    public ListStack(){
+//    public ListStack(){
 //        Node node = new Node();
 //        first = node;
-    }
+//    }
     public boolean isEmpty(){return first == null;}
     public int size(){return N;}
     //入栈
@@ -41,6 +41,11 @@ public class ListStack<Item> implements  Iterable<Item> {
         first = first.next;
         N--;
         return item;
+    }
+    //获取栈顶元素
+    public Item peek(){
+        if(isEmpty()) throw new RuntimeException("Stack underflow");
+        return first.item;
     }
     //迭代
     public Iterator<Item> iterator(){ return new ListIterator();}
