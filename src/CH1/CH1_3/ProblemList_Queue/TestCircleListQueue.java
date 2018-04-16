@@ -10,8 +10,8 @@ public class TestCircleListQueue {
         String [] str = {"A","B","C","D","E","F","G","H"};
         CircleListQueue<String> q = new CircleListQueue<String>(str);
 //        q.Print();
-        q.dequeue();
-        q.enqueue("ZZ");
+//        q.dequeue();
+//        q.enqueue("ZZ");
         Iterator itor = q.iterator();
         while(itor.hasNext()){
             StdOut.printf("%3s -->",itor.next());
