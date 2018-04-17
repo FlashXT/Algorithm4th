@@ -6,9 +6,9 @@ import java.util.NoSuchElementException;
 import java.lang.Exception;
 
 public class List<Item> implements Iterable<Item> {
-    private Node first;
+    public Node first;
     private Node last;
-    private class Node{
+    public class Node{
         Item item;
         Node next;
         public Node(){}
@@ -114,6 +114,20 @@ public class List<Item> implements Iterable<Item> {
         else           { last.next = x; last = x; }
         N++;
     }
+
+    // Reverse List
+    public Node ReverseList(Node pointer){
+        if(pointer == null || pointer.next == null) return pointer;
+
+
+        Node second = ReverseList(pointer.next);
+
+        pointer.next.next = pointer;
+        pointer.next = null;
+        return second;
+
+    }
+
 
     //迭代
     public Iterator<Item> iterator()
