@@ -50,6 +50,15 @@ public class CircleArrayQueue<Item> implements Iterable<Item> {
     public Item peek(){
         return queue[top];
     }
+    //Print
+    public void Print(){
+        for(int i = top;i != tail; i=(i + 1)%queue.length){
+
+            StdOut.printf("%s-->",queue[i]);
+
+        }
+
+    }
 
     //迭代
     public Iterator<Item> iterator(){ return new CircleArrayIterator();}

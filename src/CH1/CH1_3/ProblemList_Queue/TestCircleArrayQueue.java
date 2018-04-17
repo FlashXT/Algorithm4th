@@ -21,7 +21,8 @@ public class TestCircleArrayQueue {
 
 
         q.enqueue("ZZ");
-
+        q.Print();
+        StdOut.println();
         Iterator itor = q.iterator();
         while(itor.hasNext()){
             StdOut.printf("%s-->",itor.next());
