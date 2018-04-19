@@ -115,7 +115,7 @@ public class List<Item> implements Iterable<Item> {
         N++;
     }
 
-    // Reverse List
+    // Reverse List 1.3.30
     public Node ReverseList(Node pointer){
         if(pointer == null || pointer.next == null) return pointer;
 

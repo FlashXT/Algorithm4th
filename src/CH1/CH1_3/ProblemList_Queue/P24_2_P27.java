@@ -4,7 +4,7 @@ import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Iterator;
 
-public class P24_2_P29 {
+public class P24_2_P27 {
 
     public static void main(String [] args) {
         Integer [] a = {1,2,3,7,5};
