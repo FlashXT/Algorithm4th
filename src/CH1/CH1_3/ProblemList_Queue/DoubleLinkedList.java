@@ -153,6 +153,18 @@ public class DoubleLinkedList<Item> implements Iterable<Item>{
             return item;
         }
 
+//        private DoubleNode current = last;
+//
+//        public boolean hasNext()  { return current != null;                     }
+//        public void remove()      { throw new UnsupportedOperationException();  }
+//
+//        public Item next()
+//        {
+//            if (!hasNext()) throw new NoSuchElementException();
+//            Item item = current.item;
+//            current = current.prev;
+//            return item;
+//        }
 
     }
 
