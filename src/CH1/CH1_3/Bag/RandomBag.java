@@ -4,8 +4,6 @@
  * */
 package CH1.CH1_3.Bag;
 
-import edu.princeton.cs.algs4.StdOut;
-
 import java.util.Iterator;
 import java.util.Random;
 
@@ -13,13 +11,10 @@ public class RandomBag<Item> implements Iterable<Item> {
 
     Item [] rbag = (Item []) new Object[10];
     int []flag = new int[rbag.length];
-
     private int N = 0;
 
     public RandomBag(){    }
     public RandomBag(Item [] item){
-        for(int i = 0; i < flag.length;i++)
-            flag[i] = 0;
         for(int i = 0; i < item.length;i++)
             add(item[i]);
     }
@@ -36,13 +31,11 @@ public class RandomBag<Item> implements Iterable<Item> {
     public void add(Item item){
            Random rand = new Random();
            int temp = rand.nextInt(rbag.length);
-           while(flag[temp] == 0){
+           while(flag[temp] != 0){
                temp = rand.nextInt(rbag.length);
-//               StdOut.println(temp);
            }
 
            rbag[temp] = item;
-           flag[temp] = 1;
            N++;
 
     }
@@ -89,7 +82,6 @@ public class RandomBag<Item> implements Iterable<Item> {
                 temp = rand.nextInt(rbag.length);
 
             }
-            flag[temp] = 2;
             return  rbag[temp];
 
         }
