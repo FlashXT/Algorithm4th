@@ -20,7 +20,7 @@ public class ResizingArrayQueueOfStrings<Item> implements Iterable<Item>{
             if (N < q.length / 2) resize(q.length / 2);
             return item;
         } else
-            throw new Exception("Stack is empty!");
+            throw new Exception("Queue is empty!");
     }
 
     //获取队头元素
