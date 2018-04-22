@@ -4,6 +4,8 @@
  * */
 package CH1.CH1_3.Bag;
 
+import edu.princeton.cs.algs4.StdOut;
+
 import java.util.Iterator;
 import java.util.Random;
 
@@ -15,8 +17,13 @@ public class RandomBag<Item> implements Iterable<Item> {
 
     public RandomBag(){    }
     public RandomBag(Item [] item){
-        for(int i = 0; i < item.length;i++)
+
+        for(int i = 0; i < item.length;i++){
+            if(item.length > rbag.length) throw new RuntimeException("THE RANDOMBAG is FULL! ");
             add(item[i]);
+        }
+
+
     }
 
     //背包是否为空
@@ -31,11 +38,12 @@ public class RandomBag<Item> implements Iterable<Item> {
     public void add(Item item){
            Random rand = new Random();
            int temp = rand.nextInt(rbag.length);
-           while(flag[temp] != 0){
+           while(rbag[temp] != null){
                temp = rand.nextInt(rbag.length);
            }
 
            rbag[temp] = item;
+           flag[temp] = 1;
            N++;
 
     }
@@ -47,6 +55,7 @@ public class RandomBag<Item> implements Iterable<Item> {
             if(rbag[i] == item) {
                 rbag[i] = null;
                 flag[i]=0;
+                N--;
             }
         }
     }
@@ -58,30 +67,33 @@ public class RandomBag<Item> implements Iterable<Item> {
         }
         return false;
     }
+    //按序输出，调试专用
+    private void Print(){
+        for(int i = 0; i < rbag.length; i++ )
+            StdOut.printf("%5d",rbag[i]);
+    }
 
     //随机迭代
     public Iterator<Item> iterator(){return new RandomBagIterator();}
     private class RandomBagIterator implements Iterator<Item>{
-
+        int num = 0;
         Random rand = new Random();
         private  int temp = rand.nextInt(rbag.length);
 
         public boolean hasNext(){
-            int num = 0;
-            for(int i = 0; i < flag.length; i++)
-            {
-                if(flag[i] == 2) num++;
-            }
+
              return num != N;
         }
         public Item next(){
             Random rand = new Random();
             temp = rand.nextInt(rbag.length);
-            int num = 0;
-            while(flag[temp] != 1){
-                temp = rand.nextInt(rbag.length);
 
+            while(true){
+                temp = rand.nextInt(rbag.length);
+                if(flag[temp] == 1 ) break;
             }
+            num++;
+            flag[temp] = 2;
             return  rbag[temp];
 
         }
