@@ -10,22 +10,26 @@ public class BinarySearch {
     public static void main(String args[]){
         int whitelist[]=In.readInts(args[0]);
         Arrays.sort(whitelist);
+        for(int s:whitelist)
+            StdOut.print(s+" ");
+        StdOut.println();
 		while(!StdIn.isEmpty()){
 			int key=StdIn.readInt();
-			if(rank(key,whitelist)<0)
-				StdOut.println(key);
+			StdOut.println(rank(whitelist,key));
+
 		}
     }
-    public static int rank(int key,int []a){
+    public static int rank(int []a,int key){
 
-        int low=0;
-        int high=a.length-1;
-        int mid=(low+high)/2;
-        while(low<high){
-            if(key<a[mid]) high=mid-1;
-            else if (key > a[mid]) low=mid+1;
-            else return mid;
-            mid=(low+high)/2;
+        int low = 0;
+        int high = a.length - 1;
+
+        while(low <= high){
+            int mid = low + ( high - low ) / 2;
+            if( key < a[mid] )           high = mid - 1;
+            else if (key > a[mid])        low = mid + 1;
+            else                          return mid;
+
         }
         return -1;
     }
