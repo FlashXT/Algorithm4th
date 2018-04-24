@@ -1,5 +1,7 @@
 package CH1.CH1_4;
 
+import CH1.CH1_4.DoublingRatioExperiments.DoublingTest;
+
 public class testClass {
     public static void main(String [] args){
         String [][] str = {{"src\\CH1\\CH1_4\\1Kints.txt"},
