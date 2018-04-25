@@ -17,9 +17,10 @@ public class Solutions {
     public static  int[] a,b,ans;
 
     public static void main(String [] args){
+        ans = new int[a.length<b.length?a.length:b.length];
 
         CreateArray(20,50);
-        Solution0();
+        Solution0(ans);
         Print();
 
     }
@@ -44,22 +45,23 @@ public class Solutions {
         StdOut.println();
     }
     //暴力算法，双重循环，N^2阶
-    public static void Solution0() {
-        ans = new int[a.length<b.length?a.length:b.length];
+    public static void Solution0(int[] ans) {
+
         int k = 0;
         for(int i = 0; i<a.length;i++)
             for(int j = 0; j <b.length;j++)
                 if(a[i] == b[j]) ans[k++] = a[i];
     }
     //N阶
-    public static void Solution1(){
-        ans = new int[a.length<b.length?a.length:b.length];
+    public static void Solution1(int[] ans){
+
         Arrays.sort(a);
         Arrays.sort(b);
 
         int pa=0,pb=0,p=0;
 
         while(pa<a.length && pb<b.length){
+
             while(pa<a.length && pb<b.length && a[pa]==b[pb]){
                 ans[p++]=a[pa];
                 pa++;
@@ -72,6 +74,7 @@ public class Solutions {
 
                 pb++;
             }
+
         }
     }
-    }
+}

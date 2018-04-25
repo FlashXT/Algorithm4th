@@ -3,6 +3,7 @@ package CH1.CH1_4.DoublingRatioExperiments;
 import CH1.CH1_4.Stopwatch;
 import CH1.CH1_4.ThreeSum;
 
+import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 
@@ -25,15 +26,20 @@ public class DoublingTest {
     public static void main(String[] args) {
         //打印运行时间表格
         StdOut.println("Scale\tCount\n-------------");
-        DrawGraph.DrawXYBase();
-        double x = 0;
-        for (int N = 256; N < Integer.valueOf(args[0]); N += N) {
-            double time = timeTrial(N);
-            StdOut.printf("%-7d%5.1fs\n", N, time);
-            DrawGraph.DrawPoint(N,time);
 
-            DrawGraph.DrawLine(N/2,x,N,time);
-            x = time;
+
+         DrawGraph dg = new DrawGraph(0,0,15,5);
+         dg.DrawXYLogBase();
+
+
+        double timeprev = 0;
+        for (int N = 1000; N < Integer.valueOf(args[0]); N += N) {
+            double time = timeTrial(N);
+            StdOut.printf("%-7f%5.1f\n", Math.log(N),Math.log(time));
+            dg.DrawPoint(Math.log(N),Math.log(time));
+
+            dg.DrawLine(Math.log(N/2),Math.log(timeprev),Math.log(N),Math.log(time));
+            timeprev = time;
 
         } 
     } 
