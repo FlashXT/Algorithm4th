@@ -28,17 +28,17 @@ public class DoublingTest {
         StdOut.println("Scale\tCount\n-------------");
 
 
-         DrawGraph dg = new DrawGraph(0,0,15,5);
-         dg.DrawXYLogBase();
+         DrawGraph dg = new DrawGraph(0,0,2000,120);
+         dg.DrawXYBase();
 
 
         double timeprev = 0;
-        for (int N = 1000; N < Integer.valueOf(args[0]); N += N) {
+        for (int N = 200; N < Integer.valueOf(args[0]); N += 100) {
             double time = timeTrial(N);
-            StdOut.printf("%-7f%5.1f\n", Math.log(N),Math.log(time));
-            dg.DrawPoint(Math.log(N),Math.log(time));
+            StdOut.printf("%-7d%5.1f\n", N,time);
+            dg.DrawPoint(N/10,time);
 
-            dg.DrawLine(Math.log(N/2),Math.log(timeprev),Math.log(N),Math.log(time));
+            dg.DrawLine((N-100)/10,timeprev,N/10,time);
             timeprev = time;
 
         } 
