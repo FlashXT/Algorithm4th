@@ -1,4 +1,4 @@
-package CH1.CH1_4; /*************************************************************************
+package CH1.CH1_4.SumProblem; /*************************************************************************
  *  Compilation:  javac ThreeSumFast.java
  *  Execution:    java ThreeSumFast input.txt
  *  Data files:   http://algs4.cs.princeton.edu/14analysis/1Kints.txt
@@ -39,6 +39,7 @@ package CH1.CH1_4; /************************************************************
  *************************************************************************/
 
 import CH1.CH1_1.BinarySearch;
+import CH1.CH1_4.Stopwatch;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
@@ -52,9 +53,9 @@ public class ThreeSumFast {
         System.out.println("Scale\tCount\t\tTime");
         System.out.println("---------------------------");
         while(count <= 32){
-            int [] data = In.readInts("src\\CH1\\CH1_4\\"+count+"Kints.txt");
-
-            Stopwatch timer = new Stopwatch();
+//            int [] data = In.readInts("src\\CH1\\CH1_4\\"+count+"Kints.txt");
+//
+            int [] data = {1,-1,2,-2,3,4,5,6,-3,-4,-7,8,4};            Stopwatch timer = new Stopwatch();
             cnt = count(data);
 
             if(count <= 2)

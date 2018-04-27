@@ -10,16 +10,17 @@
 package CH1.CH1_4.AboutFindElements;
 
 import CH1.CH1_1.BinarySearch;
+import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Arrays;
 
-public class MinIndex {
+public class MinIndex_Fast_HowMany {
     public static void main(String [] args){
-        int [] data = {1,2,3,4,56,23,56,78,90,23,58};
+        int [] data = {1,2,3,4,56,23,56,78,90,23,58};//In.readInts("src\\CH1\\CH1_4\\1Kints.txt");
         Arrays.sort(data);
         for(int i : data)
-            StdOut.printf("%3d",i);
+            StdOut.printf("%-3d",i);
         StdOut.println();
         StdOut.println(FindminIndex(data,56));
         StdOut.println(HowMany(data,56));
@@ -45,22 +46,24 @@ public class MinIndex {
     }
     //How Many()问题 (lgN阶)
     //查找思路：利用二分查找的递归算法，先找到该元素(假设该元素存在)，假设该元素在数组中有若干个，
-    //然后再次利用二分查找分别在[0,index-1]和[index+1，data.length - 1]范围内递归查找并计数；直到在这两个半
-    //区查找不到为止，然后返回计数值，就是该元素在数组中个数；
+    //然后再次利用二分查找分别在[0,index-1]和[index+1，data.length - 1]范围内递归查找并计数；
+    //直到在这两个半区查找不到为止，然后返回计数值，就是该元素在数组中个数；
     public static int HowMany(int[] data,int key){
         int count = 0;
-        int index0 = BinarySearch(data,0,data.length-1,key);
-        int index1 = BinarySearch(data,0,data.length-1,key);
-
+        int index0 =  BinarySearch(data,0,data.length-1,key);
+        int index1 =  BinarySearch(data,0,data.length-1,key);
+        if(index0 == -1) return 0;
         while(index0 != -1){
             count ++;
             index0 = BinarySearch(data,0,index0-1,key);
+
         }
         while(index1 != -1){
             count ++;
             index1 = BinarySearch(data,index1+1,data.length-1,key);
+
         }
-        return count;
+        return --count;
 
     }
 

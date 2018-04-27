@@ -1,8 +1,7 @@
 package CH1.CH1_4.DoublingRatioExperiments;
 
 import CH1.CH1_4.Stopwatch;
-import CH1.CH1_4.ThreeSum;
-import edu.princeton.cs.algs4.StdDraw;
+import CH1.CH1_4.SumProblem.ThreeSumBase;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 
@@ -16,7 +15,7 @@ public class DoublingRatio {
             a[i] = StdRandom.uniform(-MAX, MAX);
         }
         Stopwatch s = new Stopwatch();
-        int cnt = ThreeSum.count(a);
+        int cnt = ThreeSumBase.count(a);
         return s.elapsedTime();
     }
 

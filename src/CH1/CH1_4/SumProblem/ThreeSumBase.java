@@ -1,5 +1,6 @@
-package CH1.CH1_4;
+package CH1.CH1_4.SumProblem;
 
+import CH1.CH1_4.Stopwatch;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
@@ -29,7 +30,7 @@ import edu.princeton.cs.algs4.StdOut;
  *
  *************************************************************************/
 
-public class ThreeSum {
+public class ThreeSumBase {
 
     // print distinct triples (i, j, k) such that a[i] + a[j] + a[k] = 0
     public static void main(String [] args){
@@ -37,8 +38,8 @@ public class ThreeSum {
         System.out.println("Scale\tCount\t\tTime");
         System.out.println("--------------------------------");
         while(count <= 32){
-            int [] data = In.readInts("src\\CH1\\CH1_4\\"+count+"Kints.txt");
-
+//            int [] data = In.readInts("src\\CH1\\CH1_4\\"+count+"Kints.txt");
+            int [] data = {1,-1,2,-2,3,4,5,6,-3,-4,-7,8,4};
             Stopwatch timer = new Stopwatch();
             cnt = count(data);
 
