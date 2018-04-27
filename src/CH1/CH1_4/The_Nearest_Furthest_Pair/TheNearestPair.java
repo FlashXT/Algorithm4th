@@ -3,7 +3,7 @@
  * 两者之差的绝对值最小的两个数。要求程序的时间复杂度上界为O(N*lgN)
  * Author:FlashXT;
  * Date:2018.4.27,Friday;
- * CopyRight © 2018-2020,FlashXT & turboMan . All Right Reserved.
+ * CopyRight © 2018-2020,FlashXT & turboMan. All Right Reserved.
  *
  ***************************************************************/
 
