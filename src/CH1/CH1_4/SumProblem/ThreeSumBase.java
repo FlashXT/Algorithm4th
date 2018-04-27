@@ -4,6 +4,8 @@ import CH1.CH1_4.Stopwatch;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
+import java.util.Arrays;
+
 /*************************************************************************
  *  Compilation:  javac ThreeSum.java
  *  Execution:    java ThreeSum input.txt
@@ -38,16 +40,12 @@ public class ThreeSumBase {
         System.out.println("Scale\tCount\t\tTime");
         System.out.println("--------------------------------");
         while(count <= 32){
-//            int [] data = In.readInts("src\\CH1\\CH1_4\\"+count+"Kints.txt");
-            int [] data = {1,-1,2,-2,3,4,5,6,-3,-4,-7,8,4};
+            int [] data = In.readInts("src\\CH1\\CH1_4\\"+count+"Kints.txt");
+//            int [] data = {1,-1,2,-2,3,4,5,6,-3,-4,-7,8,4};
             Stopwatch timer = new Stopwatch();
             cnt = count(data);
+            System.out.printf("%-2dK\t\t%-7d\t\t%.3fs\n",count,cnt,timer.elapsedTime());
 
-
-            if(count <= 2)
-                System.out.printf("%-2dK\t\t%-3d\t\t\t%.3fs\n",count,cnt,timer.elapsedTime());
-            else
-                System.out.printf("%-2dK\t\t%-3d\t\t%.3fs\n",count,cnt,timer.elapsedTime());
             count*=2;
         }
 
@@ -55,6 +53,7 @@ public class ThreeSumBase {
 
     // return number of distinct triples (i, j, k) such that a[i] + a[j] + a[k] = 0
     public static int count(int[] a) {
+        Arrays.sort(a);
         int N = a.length;
         int cnt = 0;
         for (int i = 0; i < N; i++) {
@@ -62,6 +61,7 @@ public class ThreeSumBase {
                 for (int k = j+1; k < N; k++) {
                     if (a[i] + a[j] + a[k] == 0) {
                         cnt++;
+                       // StdOut.println(""+a[i]+","+a[j]+","+a[k]);
                     }
                 }
             }

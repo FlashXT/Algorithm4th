@@ -23,7 +23,7 @@ public class TwoSumFaster {
         StdOut.println("Scale\tCount\tTime\n----------------------");
         for (int i = 1; i <=32 ; i+=i ){
             int [] data = In.readInts("src\\CH1\\CH1_4\\"+i+"Kints.txt");
-//            int [] data = {1,-1,2,-2,3,4,5,6,-3,-4,-7,8,4};
+            //int [] data = {1,-1,2,-2,3,4,5,6,-3,-4,-7,8,4};
             Stopwatch st = new Stopwatch();
 
             StdOut.printf("%-2dk\t\t%-5d\t%-6.3fs\n",i,TwoSum(data),st.elapsedTime());
@@ -34,30 +34,31 @@ public class TwoSumFaster {
     }
 
     //双指针法
-//    public static int TwoSum(int [] data){
-//        Arrays.sort(data);
-//        int top = 0;
-//        int tail = data.length - 1;
-//        int count = 0;
-//        while(top < tail){
-//
-//            while(data[top] + data[tail] > 0) {   tail--;   }
-//            while(data[top] + data[tail] < 0 ){   top++;    }
-//            if(data[top] + data[tail] == 0) {top++;count++;}
-//            //if(data[top] + data[tail] == 0) {tail--;count++;}
-//        }
-//        return count;
-//
-//    }
+    public static int TwoSum(int [] data){
+        Arrays.sort(data);
+        int top = 0;
+        int tail = data.length - 1;
+        int count = 0;
+        while(top < tail){
+
+            while( data[top] + data[tail] > 0  && top < tail) {   tail--;   }
+            while( data[top] + data[tail] < 0  && top < tail) {   top++;    }
+            if( data[top] + data[tail] == 0 && top < tail)   {   top++;count++; }
+
+        }
+        return count;
+
+    }
+
     //hashTable法
-    public static int TwoSum(int[] data){
+    public static int TwoSumHashTable(int[] data){
         //构造HashTable
         Hashtable<Integer,Integer> table = new Hashtable<Integer,Integer>();
         for(int i = 0; i < data.length;i++)
             table.put(data[i],i);
 
         int top = 0,count = 0;
-        //int range = table.
+
         while(top < data.length){
             if(table.containsKey(-data[top])) count++;
             top++;
