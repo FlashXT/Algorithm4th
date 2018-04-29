@@ -3,7 +3,6 @@ package CH1.CH1_3.ProblemList_Queue;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import java.lang.Exception;
 
 public class List<Item> implements Iterable<Item> {
     public Node first;

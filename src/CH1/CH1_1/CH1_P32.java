@@ -5,7 +5,6 @@
 package CH1.CH1_1;
 
 import edu.princeton.cs.algs4.StdDraw;
-import edu.princeton.cs.algs4.StdOut;
 
 public class CH1_P32 {
     public static void main(String [] args){

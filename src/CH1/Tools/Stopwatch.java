@@ -1,4 +1,4 @@
-package CH1.CH1_4;
+package CH1.Tools;
 /*************************************************************************
  *  Compilation:  javac Stopwatch.java
  *

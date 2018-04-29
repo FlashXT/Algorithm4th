@@ -6,7 +6,7 @@ import edu.princeton.cs.algs4.StdOut;
 public class TheMinElementOfLocalFast {
 
     public static void main(String [] args){
-        int [] data = In.readInts("src\\CH1\\CH1_4\\1Kints.txt");
+        int [] data = In.readInts("src\\CH1\\Data\\1Kints.txt");
 //        int [] data = {3,4,5,7,8,5,7};
         int index = MinLocal(data);
         StdOut.println(index);

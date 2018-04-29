@@ -13,7 +13,7 @@ public class TheFurthestPairFast {
         StdOut.println("Scale\tNum1\t\t\tNum2\t\t\tDistance\t\t\tTime");
         StdOut.println("------------------------------------------------------------------" );
         for (int i = 1; i <= 32 ; i+=i ){
-            double [] data = In.readDoubles("src\\CH1\\CH1_4\\"+i+"Kints.txt");
+            double [] data = In.readDoubles("src\\CH1\\Data\\"+i+"Kints.txt");
 //            double [] data = {1,-1,2,-2,3,4,5,6,-3,-4,-7,8};
             Stopwatch st = new Stopwatch();
             int[] result = FurthestPair(data);

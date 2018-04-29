@@ -9,15 +9,13 @@
  ********************************************************************/
 package CH1.CH1_4.AboutFindElements;
 
-import CH1.CH1_1.BinarySearch;
-import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Arrays;
 
 public class MinIndex_Fast_HowMany {
     public static void main(String [] args){
-        int [] data = {1,2,3,4,56,23,56,78,90,23,58};//In.readInts("src\\CH1\\CH1_4\\1Kints.txt");
+        int [] data = {1,2,3,4,56,23,56,78,90,23,58};//In.readInts("src\\CH1\\Data\\1Kints.txt");
         Arrays.sort(data);
         for(int i : data)
             StdOut.printf("%-3d",i);

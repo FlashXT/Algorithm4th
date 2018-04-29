@@ -2,7 +2,8 @@
  * */
 
 package CH1.CH1_1;
-import java.util.*;
+
+import java.util.Arrays;
 public class recursionBinarySearch2 {
     public static void main(String [] args){
         int []a={1,2,34,54,21,3,22,41,6,45,67,23,57,78,37};

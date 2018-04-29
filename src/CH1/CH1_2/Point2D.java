@@ -7,7 +7,6 @@ package CH1.CH1_2;
 import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.StdOut;
 
-
 import java.awt.*;
 import java.util.Random;
 import java.util.Scanner;

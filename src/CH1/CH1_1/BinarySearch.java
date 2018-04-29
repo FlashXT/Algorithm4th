@@ -4,8 +4,12 @@
 *③java-algs4 BinarySearch TinyW.txt < TinyT.txt ，进行查找
 */
 package CH1.CH1_1;
+
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
+
 import java.util.Arrays;
-import edu.princeton.cs.algs4.*;
 public class BinarySearch {
     public static void main(String args[]){
         int whitelist[]=In.readInts(args[0]);

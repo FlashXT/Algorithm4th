@@ -3,7 +3,6 @@ package CH1.CH1_3.ProblemList_Queue;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Iterator;
-import java.util.Random;
 
 public class TestRandomQueue {
     public static void main(String [] args){

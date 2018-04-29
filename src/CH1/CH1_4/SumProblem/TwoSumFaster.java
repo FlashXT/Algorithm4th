@@ -22,7 +22,7 @@ public class TwoSumFaster {
     public static void main(String [] args){
         StdOut.println("Scale\tCount\tTime\n----------------------");
         for (int i = 1; i <=32 ; i+=i ){
-            int [] data = In.readInts("src\\CH1\\CH1_4\\"+i+"Kints.txt");
+            int [] data = In.readInts("src\\CH1\\Data\\"+i+"Kints.txt");
             //int [] data = {1,-1,2,-2,3,4,5,6,-3,-4,-7,8,4};
             Stopwatch st = new Stopwatch();
 

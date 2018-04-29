@@ -30,7 +30,6 @@ package CH1.CH1_3;
 
 import edu.princeton.cs.algs4.StdOut;
 
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class CH1_3_P10_InfixToPostfix {

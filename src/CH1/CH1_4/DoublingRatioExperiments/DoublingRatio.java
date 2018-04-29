@@ -1,7 +1,7 @@
 package CH1.CH1_4.DoublingRatioExperiments;
 
-import CH1.CH1_4.Stopwatch;
 import CH1.CH1_4.SumProblem.ThreeSumBase;
+import CH1.Tools.Stopwatch;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 

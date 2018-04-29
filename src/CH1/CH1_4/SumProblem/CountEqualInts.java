@@ -6,8 +6,9 @@
  *
  * ******************************************************************************/
 
-package CH1.CH1_4;
+package CH1.CH1_4.SumProblem;
 
+import CH1.Tools.Stopwatch;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
@@ -18,14 +19,14 @@ public class CountEqualInts {
         int [] data;
         System.out.println("Scale\tCount\tTime(N^2)\n--------------------------");
         for(int i = 1; i <= 32;i*=2){
-            data= In.readInts("src\\CH1\\CH1_4\\"+i+"Kints.txt");
+            data= In.readInts("src\\CH1\\Data\\"+i+"Kints.txt");
             Stopwatch stopwatch = new Stopwatch();
             StdOut.printf("%-2dk\t\t%-5d\t%-5.3fs\n",i,Count(data),stopwatch.elapsedTime());
         }
 
         System.out.println("Scale\tCount\tTime(NlgN)\n--------------------------");
         for(int i = 1; i <= 32;i*=2){
-            data= In.readInts("src\\CH1\\CH1_4\\"+i+"Kints.txt");
+            data= In.readInts("src\\CH1\\Data\\"+i+"Kints.txt");
             Stopwatch stopwatch = new Stopwatch();
             StdOut.printf("%-2dk\t\t%-5d\t%-5.3fs\n",i,Count2(data),stopwatch.elapsedTime());
         }
