@@ -1,3 +1,4 @@
+
 package CH1.CH1_2;
 
 import edu.princeton.cs.algs4.StdOut;

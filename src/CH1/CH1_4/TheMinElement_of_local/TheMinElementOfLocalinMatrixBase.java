@@ -30,8 +30,8 @@ public class TheMinElementOfLocalinMatrixBase {
 //            StdOut.println();
 //        }
 
-        for (int i = 1; i < b.length-1; i++){
-            for (int j = 1; j < b[i].length-1; j++) {
+        for (int i = 1; i < b.length-2; i++){
+            for (int j = 1; j < b[i].length-2; j++) {
                  if ( a[i][j] < a[i][j - 1] && a[i][j] < a[i][j + 1]&&
                       a[i][j] < a[i - 1][j] && a[i][j] < a[i + 1][j]  )
                         {   index[0] = i;index[1] = j;return index; }
@@ -43,9 +43,9 @@ public class TheMinElementOfLocalinMatrixBase {
 
     public static int[][]Matrix(){
         int[][] data =  {{9,3,5,2,4,9,8},
-                         {7,2,5,1,4,0,3},
-                         {9,8,9,3,2,4,8},
-                         {7,6,3,1,3,2,3},
+                         {7,4,5,2,4,3,3},
+                         {9,8,9,3,4,4,8},
+                         {7,6,3,1,3,3,3},
                          {9,0,6,0,4,6,4},
                          {8,9,8,0,5,3,0},
                          {2,1,2,1,1,1,1}};
