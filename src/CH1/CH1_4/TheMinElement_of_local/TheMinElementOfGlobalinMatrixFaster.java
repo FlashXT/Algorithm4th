@@ -13,7 +13,7 @@ public class TheMinElementOfGlobalinMatrixFaster {
     public static void main(String[] args) {
         int[][] data = Matrix();
         int []index =  MatrixMinLocal(data);
-        StdOut.println((index[0]-1)+","+(index[1]-1));
+        StdOut.println(" "+(index[0]-1)+","+(index[1]-1));
 
     }
 
@@ -86,7 +86,7 @@ public class TheMinElementOfGlobalinMatrixFaster {
                 {index[0]= i;index[1]= cmid;}
             }
         }
-        StdOut.println(index[0]+","+index[1]);
+//        StdOut.println(index[0]+","+index[1]);
 //        if( data[rmid-1][cmid] > data[rmid][cmid] && data[rmid+1][cmid] > data[rmid][cmid]
 //                && data[rmid][cmid-1] > data[rmid][cmid] && data[rmid][cmid+1] > data[rmid][cmid]){
 //            if(data[rmid][cmid] <= data[index[0]][index[1]])
