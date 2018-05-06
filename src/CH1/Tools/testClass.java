@@ -4,10 +4,10 @@ import CH1.CH1_4.DoublingRatioExperiments.DoublingTest;
 
 public class testClass {
     public static void main(String [] args){
-        String [][] str = {{"src\\CH1\\CH1_4\\1Kints.txt"},
-                           {"src\\CH1\\CH1_4\\2Kints.txt"},
-                           {"src\\CH1\\CH1_4\\4Kints.txt"},
-                           {"src\\CH1\\CH1_4\\8Kints.txt"},
+        String [][] str = {{"src\\CH1\\CH1.CH1_4\\1Kints.txt"},
+                           {"src\\CH1\\CH1.CH1_4\\2Kints.txt"},
+                           {"src\\CH1\\CH1.CH1_4\\4Kints.txt"},
+                           {"src\\CH1\\CH1.CH1_4\\8Kints.txt"},
                            {"100000"}};
 
 //        ThreeSum.main(str[0]);
