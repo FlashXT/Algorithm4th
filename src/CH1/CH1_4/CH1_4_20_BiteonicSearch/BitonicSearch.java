@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 public class BitonicSearch {
     public static void main(String [] args){
-        int [] arr = {1,2,3,4,7,8,12,15,20,19,17,14,12,10,8,7};
+        int [] arr = {1,2,3,4,7,9,12,15,20,19,17,14,12,10,8,7};
         int maxindex = BinFindMax(arr,0,arr.length-1);
         StdOut.println("Input key : ");
         Scanner scan = new Scanner(System.in);
@@ -45,8 +45,8 @@ public class BitonicSearch {
         if(start > end) return -1;
         int mid = (start+end)/2;
         if(array[mid] == key) return mid;
-        else if(array[mid] < key) return BinarySearchUp(array, start,mid-1,key);
-        else return BinarySearchUp(array,mid+1,end, key);
+        else if(array[mid] < key) return BinarySearchDown(array, start,mid-1,key);
+        else return BinarySearchDown(array,mid+1,end, key);
     }
 
 }
