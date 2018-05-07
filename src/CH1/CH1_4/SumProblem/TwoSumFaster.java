@@ -7,7 +7,7 @@ import edu.princeton.cs.algs4.Stopwatch;
 import java.util.Arrays;
 import java.util.Hashtable;
 
-/******************************************************
+/**********************************************************************************
  * TwoSum,以排序好的数组，要求时间复杂度为线性级别O(n);
  * 目前有两种思路：
  * ①HashTable/HashMap:建立HashTable时间复杂度在O(1)~O(n);然后在HashTable/HashMap中查找，
@@ -16,7 +16,7 @@ import java.util.Hashtable;
  * Author:FlashXT;
  * Date:2018.4.27,Friday;
  * CopyRight © 2018-2020,FlashXT & turboMan . All Right Reserved.
- */
+ ***********************************************************************************/
 
 public class TwoSumFaster {
     public static void main(String [] args){
