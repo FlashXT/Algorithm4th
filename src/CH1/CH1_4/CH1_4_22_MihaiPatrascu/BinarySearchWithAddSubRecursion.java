@@ -14,7 +14,7 @@
  * CopyRight © 2018-2020,FlashXT & turboMan . All Right Reserved.
  ***************************************************************************************************/
 
-package CH1.CH1_4.CH1_4_21_MihaiPatrascu;
+package CH1.CH1_4.CH1_4_22_MihaiPatrascu;
 
 import edu.princeton.cs.algs4.StdOut;
 

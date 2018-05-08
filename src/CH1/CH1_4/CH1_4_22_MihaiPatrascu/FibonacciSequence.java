@@ -1,4 +1,4 @@
-package CH1.CH1_4.CH1_4_21_MihaiPatrascu;
+package CH1.CH1_4.CH1_4_22_MihaiPatrascu;
 
 import java.util.Scanner;
 
