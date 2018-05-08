@@ -10,12 +10,6 @@
  * Author:FlashXT;Date:2018.5.7,Monday;
  * CopyRight © 2018-2020,FlashXT & turboMan . All Right Reserved.
  ***************************************************************************************************/
-
-
-
-
-
-
 package CH1.CH1_4.CH1_4_21_MihaiPatrascu;
 
 import edu.princeton.cs.algs4.StdOut;
@@ -28,10 +22,6 @@ public class BinarySearchWithAddSubLoop {
         Arrays.sort(data);
 
         StdOut.println(BinarySearchAS(data,56));
-
-
-
-
     }
 
  public static int BinarySearchAS(int [] data,int key){

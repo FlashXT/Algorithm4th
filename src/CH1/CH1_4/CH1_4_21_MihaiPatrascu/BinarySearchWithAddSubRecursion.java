@@ -24,6 +24,7 @@ public class BinarySearchWithAddSubRecursion {
     public static void main(String [] args){
         int [] data = {1,2,4,7,9,10,12,13,14,17,18,20,21,34,45,56,76};
         Arrays.sort(data);
+
         StdOut.println(BinarySearch(data,10));
 
     }
