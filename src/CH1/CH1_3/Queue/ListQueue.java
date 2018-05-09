@@ -2,7 +2,7 @@
  *Author：FlashXT;
  * Date:2018.4.7,Saturday;
  * */
-package CH1.CH1_3;
+package CH1.CH1_3.Queue;
 
 import java.util.Iterator;
 

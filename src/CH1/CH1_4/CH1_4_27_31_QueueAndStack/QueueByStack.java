@@ -8,7 +8,7 @@
  ***********************************************************************/
 
 
-package CH1.CH1_4.CH1_4_27_QueuebyTwoStack;
+package CH1.CH1_4.CH1_4_27_31_QueueAndStack;
 
 
 import edu.princeton.cs.algs4.StdOut;

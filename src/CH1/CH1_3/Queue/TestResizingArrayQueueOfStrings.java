@@ -1,5 +1,6 @@
-package CH1.CH1_3;
+package CH1.CH1_3.Queue;
 
+import CH1.CH1_3.Queue.ResizingArrayQueueOfStrings;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Iterator;

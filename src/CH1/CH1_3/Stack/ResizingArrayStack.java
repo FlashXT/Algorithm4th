@@ -1,5 +1,5 @@
 //可迭代的栈的实现
-package CH1.CH1_3;
+package CH1.CH1_3.Stack;
 
 import java.util.Iterator;
 public class ResizingArrayStack<Item> implements Iterable<Item>  {

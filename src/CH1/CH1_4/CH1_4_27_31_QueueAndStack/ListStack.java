@@ -2,7 +2,7 @@
  *Author：FlashXT;
  * Date:2018.4.6,Friday;
  * */
-package CH1.CH1_4.CH1_4_27_QueuebyTwoStack;
+package CH1.CH1_4.CH1_4_27_31_QueueAndStack;
 
 import java.util.Iterator;
 

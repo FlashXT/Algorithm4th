@@ -28,6 +28,7 @@
 * */
 package CH1.CH1_3;
 
+import CH1.CH1_3.Stack.Stack;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Scanner;

@@ -3,8 +3,9 @@
  *Author：FlashXT;
  *Date:2018.4.6,Friday;
  * */
-package CH1.CH1_3;
+package CH1.CH1_3.Stack;
 
+import CH1.CH1_3.Stack.Stack;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Iterator;
