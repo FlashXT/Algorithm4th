@@ -1,4 +1,4 @@
-package CH1.CH1_3.CH1_3_30_Steque;
+package CH1.CH1_3.CH1_3_32_Steque;
 
 import edu.princeton.cs.algs4.StdOut;
 
