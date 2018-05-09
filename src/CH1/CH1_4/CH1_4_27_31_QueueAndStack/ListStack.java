@@ -37,10 +37,12 @@ public class ListStack<Item> implements  Iterable<Item> {
     }
     //出栈
     public Item pop(){
+
         Item item = first.item;
         first = first.next;
         N--;
         return item;
+
     }
     //获取栈顶元素
     public Item peek(){

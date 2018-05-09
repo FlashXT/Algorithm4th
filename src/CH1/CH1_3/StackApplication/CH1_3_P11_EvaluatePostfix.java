@@ -1,5 +1,6 @@
-/*Algorithm4th,CH1.3_P9,利用Stack进行表达式补全；
- *用户输入：1+2)*3-4)*5-6)))
+/*Algorithm4th,CH1.3_P10,利用Stack生成后序表达式；
+ *用户输入：( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) )
+ * 预期输出：1 2 3 + 4 5 * * +
  *Author：FlashXT;
  *Date:2018.4.10,Tuesday;
  * */
@@ -21,18 +22,18 @@
 * 本题思路：
 *   遇到数字就压入操作数栈，
 *   遇到运算符就压入运算符栈；
-*   遇到右括号，就弹出两个操作数和一个运算符，进行字符串链接，而后作为一个字符串（整体）
+*   遇到右括号，就弹出两个操作数和一个运算符，进行字符串链接（与P9的顺序稍加改变），而后作为一个字符串（整体）
 *     重新压入操作数栈；
 *   由于栈中内容是反的，所以在字符串链接以及最后输出结果时都要额外处理一下，具体见代码。
 * */
-package CH1.CH1_3;
+package CH1.CH1_3.StackApplication;
 
 import CH1.CH1_3.Stack.Stack;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Scanner;
 
-public class CH1_3_P9completeExpression {
+public class CH1_3_P11_EvaluatePostfix {
     public static void main(String[] args){
         Stack<String> ops = new Stack<String>();
         Stack<String> vals = new Stack<String>();
@@ -46,12 +47,13 @@ public class CH1_3_P9completeExpression {
         int i=0;
         String temp,temp2;
         while(i < str2.length){
-            if(str2[i].equals("+")||str2[i].equals("-")||str2[i].equals("*")||str2[i].equals("/"))
-                ops.push(str2[i]);
+            if(str2[i].equals("(")||str2[i].equals(" ")) ;
+            else if(str2[i].equals("+")||str2[i].equals("-")||str2[i].equals("*")||str2[i].equals("/"))
+                       ops.push(str2[i]);
             else if (str2[i].equals(")"))
             {
                 temp = vals.pop();temp2 = vals.pop();
-                vals.push("("+temp2+ops.pop()+temp+str2[i]);
+                vals.push(temp2+" "+temp+" "+ops.pop());
             }
 
 

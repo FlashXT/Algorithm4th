@@ -1,6 +1,6 @@
 /***********************************************************************
  * 题目：用两个Stack实现Queue；
- * 算法分析：将所有元素压入栈再弹出，元素的顺序就颠倒了，再次重复这个工程，元素的顺序
+ * 算法分析：将所有元素压入栈再弹出，元素的顺序就颠倒了，再次重复这个过程，元素的顺序
  *         就会复原。
  *
  * Author:FlashXT;Date:2018.5.8,Tuesday;
@@ -17,8 +17,9 @@ import java.util.Iterator;
 
 public class QueueByStack<Item> implements Iterable<Item>{
 
-   private   ListStack< Item> ls0;
-   private   ListStack<Item> ls1;
+    private   ListStack<Item> ls0;
+    private   ListStack<Item> ls1;
+
     public QueueByStack(){
         ls0 = new ListStack<Item>();
         ls1 = new ListStack<Item>();
@@ -28,8 +29,9 @@ public class QueueByStack<Item> implements Iterable<Item>{
     public  void  enqueue(Item item){
         ls0.push(item);
     }
+
     //出队
-    public  Item  enqueue(){
+    public  Item  dequeue(){
         Item temp;
         while(!ls0.isEmpty()){
             temp = ls0.pop();
@@ -49,6 +51,7 @@ public class QueueByStack<Item> implements Iterable<Item>{
     public int size(){
         return ls0.size();
     }
+
     public Item peek(){
         Item temp;
         while(!ls0.isEmpty()){
@@ -88,10 +91,16 @@ public class QueueByStack<Item> implements Iterable<Item>{
         queue.enqueue("2");
         queue.enqueue("3");
         queue.enqueue("4");
+
         StdOut.println(queue.size());
+
         queue.Traveral();
+
+        StdOut.println("\n"+queue.dequeue());
+
         StdOut.println("\n"+queue.size());
-        StdOut.println( queue.peek());
+        queue.Traveral();
+//        StdOut.println( queue.peek());
 
 
     }

@@ -26,14 +26,14 @@
 *     重新压入操作数栈；
 *   由于栈中内容是反的，所以在字符串链接以及最后输出结果时都要额外处理一下，具体见代码。
 * */
-package CH1.CH1_3;
+package CH1.CH1_3.StackApplication;
 
 import CH1.CH1_3.Stack.Stack;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Scanner;
 
-public class CH1_3_P11_EvaluatePostfix {
+public class CH1_3_P10_InfixToPostfix {
     public static void main(String[] args){
         Stack<String> ops = new Stack<String>();
         Stack<String> vals = new Stack<String>();

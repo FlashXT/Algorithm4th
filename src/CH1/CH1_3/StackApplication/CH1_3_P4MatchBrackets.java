@@ -4,8 +4,9 @@
  *Date:2018.4.9,Monday;
  * */
 
-package CH1.CH1_3;
+package CH1.CH1_3.StackApplication;
 
+import CH1.CH1_3.Stack.ListStack;
 import CH1.CH1_3.Stack.Stack;
 import edu.princeton.cs.algs4.StdOut;
 
@@ -15,7 +16,7 @@ import java.util.Scanner;
 public class CH1_3_P4MatchBrackets {
 
         public static void main(String [] args){
-            Stack.ListStack<Character> s = new Stack.ListStack<Character>();
+            ListStack<Character> s = new ListStack<Character>();
 
             StdOut.printf("请输入括号串：");
             Scanner scan = new Scanner(System.in);
