@@ -6,13 +6,9 @@
  * Author:FlashXT;Date:2018.5.8,Tuesday;
  * CopyRight © 2018-2020,FlashXT & turboMan . All Right Reserved.
  ***********************************************************************/
-
-
 package CH1.CH1_4.CH1_4_27_31_QueueAndStack;
 
-
 import edu.princeton.cs.algs4.StdOut;
-
 import java.util.Iterator;
 
 public class QueueByStack<Item> implements Iterable<Item>{
@@ -42,6 +38,7 @@ public class QueueByStack<Item> implements Iterable<Item>{
             temp = ls1.pop();
             ls0.push(temp);
         }
+
         return temp1;
     }
 
@@ -78,29 +75,34 @@ public class QueueByStack<Item> implements Iterable<Item>{
     public void Traveral(){
         Iterator<Item> itor = this.iterator();
         while(itor.hasNext()){
+
             Item item = itor.next();
-            ls0.push(item);
+            //此时ls1一定要出栈，否则遍历完ls1中的元素还存在；
+            ls0.push(ls1.pop());
             StdOut.print(item+" ");
+
         }
+        StdOut.println();
+//        Item temp;
+//        while(!ls0.isEmpty()){
+//            temp = ls0.pop();
+//            ls1.push(temp);
+//        }
+//        while(!ls1.isEmpty()){
+//            Item item = ls1.pop();
+//            ls0.push(item);
+//            StdOut.print(item+" ");
+//        }
     }
 
     public static void main(String [] args){
 
         QueueByStack<String > queue = new QueueByStack<String>();
-        queue.enqueue("1");
-        queue.enqueue("2");
-        queue.enqueue("3");
-        queue.enqueue("4");
-
-        StdOut.println(queue.size());
-
+        queue.enqueue("1");queue.enqueue("2");queue.enqueue("3");queue.enqueue("4");
+        queue.Traveral();
+        StdOut.println(queue.dequeue());
         queue.Traveral();
 
-        StdOut.println("\n"+queue.dequeue());
-
-        StdOut.println("\n"+queue.size());
-        queue.Traveral();
-//        StdOut.println( queue.peek());
 
 
     }
