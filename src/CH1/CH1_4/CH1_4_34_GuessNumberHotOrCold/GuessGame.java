@@ -53,24 +53,24 @@ public class GuessGame {
     public  GuessGame(){
         start = 1;
         end = new Random().nextInt(1000)+1;
-        key = new Random().nextInt(end);
+        key = new Random().nextInt(end)+1;
         count = 0;
-        lastGuess = 0;
+        lastGuess = start;
     }
 
     public  String GuessResult(int N){
         count ++;
-        if(count < 2){
-            if( N == key){lastGuess = N; return "Equal";}
-            else {lastGuess = N;return "Not Equal";}
-        }
-
-        else{
+//        if(count < 2){
+//            if( N == key){lastGuess = N; return "Equal";}
+//            else {lastGuess = N;return "Not Equal";}
+//        }
+//
+//        else{
             if( N == key) {lastGuess = N; return "Equal";}
             if(Math.abs(lastGuess - key)< Math.abs(N - key))
-            {lastGuess = N;return "Cloder";}
+            {lastGuess = N;return "Colder";}
             else {lastGuess = N; return "Hotter";}
-        }
+//        }
 
     }
 
