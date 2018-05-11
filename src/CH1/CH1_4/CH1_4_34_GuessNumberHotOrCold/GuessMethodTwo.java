@@ -44,7 +44,7 @@ package CH1.CH1_4.CH1_4_34_GuessNumberHotOrCold;
  *          得到nowguess = -N/2;所以
  *         第三次guessnum = -N/2,Colder(假设);说明 -N/2距key比N更远；此时，查找范围：[1,N/2] ---> [N/4,N/2];
  *      依此类推。。。
- *      该程序再最坏情况下的猜测次数为：log2(N)+2;
+ *      该程序在最坏情况下的猜测次数为：log2(N)+2;该种算法与其说在猜数字，不如说在猜范围；
  *
  * URL: https://stackoverflow.com/questions/25558951/hot-and-cold-binary-search-game
  * Author:FlashXT;Date:2018.5.11,Friday;
