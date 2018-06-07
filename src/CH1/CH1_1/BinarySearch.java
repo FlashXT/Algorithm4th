@@ -20,7 +20,6 @@ public class BinarySearch {
 		while(!StdIn.isEmpty()){
 			int key=StdIn.readInt();
 			StdOut.println(rank(whitelist,key));
-
 		}
     }
     public static int rank(int []a,int key){
