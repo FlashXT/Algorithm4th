@@ -3,6 +3,8 @@ package CH1.CH1_5;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
+import java.io.*;
+
 /********************************************************************************
  * 简介：算法第四版1.5，union-find基本算法
  *
@@ -42,6 +44,11 @@ public class UnionFindBase {
         return id[p];
     }
     public void union(int p,int q){
+        if(p > q){
+            int temp = p;
+            p = q;
+            q = temp;
+        }
         int pID = id[p];
         int qID = id[q];
 
@@ -55,24 +62,53 @@ public class UnionFindBase {
         }
 
     }
-
-    public static void main(String [] args){
-        //解决由StdIn得到的动态连通性问题
-        StdOut.print("请输入触点数量：");
-        int N = StdIn.readInt();                   //读取触点数量
-        UnionFindBase ufb = new UnionFindBase(N);  //初始化N个分量
-
-        while(!StdIn.isEmpty()){
-            int p = StdIn.readInt();               //读取整数对
-            int q = StdIn.readInt();
-            if(ufb.connected(p,q)) continue;       //如果已经连通则忽略
-            ufb.union(p,q);                        //归并分量
-            StdOut.print(p+" "+q+"\n");                 //打印连接
-
-            for(int k:id){
-                StdOut.printf("%-2d",k);
-            }
+    public static void Print(){
+        StdOut.println("---------------------------");
+        for(int i= 0;i< id.length;i++){
+            StdOut.print(i+" ");
         }
-        StdOut.println(ufb.count()+"components");
+        StdOut.println();
+        StdOut.println();
+        for(int i=0; i < id.length;i++){
+
+            StdOut.printf("%-2d",id[i]);
+        }
+        StdOut.println("\n---------------------------");
+    }
+    public static void main(String [] args) throws Exception{
+        //解决由StdIn得到的动态连通性问题
+
+        BufferedReader  br = null;
+
+        try{
+            br = new BufferedReader(new FileReader("src\\CH1\\Data\\tinyUF.txt"));
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        int N = Integer.valueOf(br.readLine());                   //读取触点数量
+        StdOut.print("触点数量："+N+"\n");
+
+        UnionFindBase ufb = new UnionFindBase(N);  //初始化N个分量
+        Print();
+        String []str = new String[2];
+        String temp = null;
+        while((temp = br.readLine()) != null){
+            str = temp.split("\\s");
+            int p = Integer.valueOf(str[0]);       //读取整数对
+            int q = Integer.valueOf(str[1]);
+            StdOut.println("读取整数对："+p+" "+q);
+            if(ufb.connected(p,q)) {
+                StdOut.println(p+" "+q+"已经连通(0)");
+                continue;                          //如果已经连通则忽略
+            }
+            else{
+                StdOut.print(p+" "+q+"不连通,连通中... ");
+                ufb.union(p,q);                    //归并分量
+                StdOut.println(p+" "+q+"连通(1)");    //打印连接
+            }
+            Print();
+        }
+        StdOut.println("There are remain "+ufb.count()+" components.");
     }
  }
