@@ -1,5 +1,6 @@
 package CH1.CH1_5;
 
+import CH1.Tools.Stopwatch;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
@@ -22,7 +23,7 @@ import edu.princeton.cs.algs4.StdOut;
  * *********************************************************************************/
 
 public class UFquickunion extends UF {
-    private static int[] id;       //分量id(以触点作为索引)
+    private  static int[] id;       //分量id(以触点作为索引)
     private  int count;             //分量数量
     private  int linknum;           //连接数量
 
@@ -53,10 +54,13 @@ public class UFquickunion extends UF {
         }
 
     }
+
     public static void main(String [] args){
 
+        Stopwatch time = new Stopwatch();
+
         //解决动态连通性问题
-        int [] point = In.readInts("src\\CH1\\Data\\tinyUF.txt");     //读取数据
+        int [] point = In.readInts("src\\CH1\\Data\\tinyUF1.5.1.txt");     //读取数据
         StdOut.print("触点数量："+point[0]+"\n");
         UFquickunion ufu = new UFquickunion(point[0]);  //初始化N个分量
         int num=1;
@@ -73,24 +77,13 @@ public class UFquickunion extends UF {
             ufu.union(p,q);                        //归并分量
             StdOut.print(" connecting..."+"\n");                 //打印连接
 
-            for(int i = 0;i < id.length;i++){
-                StdOut.printf("%-2d",i);
-            }
-            StdOut.println();
-            for(int k:id)
-                StdOut.printf("%-2d",k);
-            StdOut.println();
+            ufu.Print(id);
         }
-        StdOut.println("----------------------");
-        for(int i = 0;i < id.length;i++){
-            StdOut.printf("%-2d",i);
-        }
-        StdOut.println();
-        for(int k:id)
-            StdOut.printf("%-2d",k);
-        StdOut.println();
+
+        ufu.Print(id);
 
         StdOut.print(ufu.count+" components; ");
         StdOut.println( ufu.linknum+" links");
+        StdOut.println(time.elapsedTime()+"s");
     }
  }

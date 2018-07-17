@@ -1,5 +1,7 @@
 package CH1.CH1_5;
 
+import edu.princeton.cs.algs4.StdOut;
+
 /************************************************************************************
  *
  *      ----------------------------union-find算法的API--------------------------
@@ -38,4 +40,18 @@ public abstract  class UF {
     public abstract int find(int p);
 
     public abstract void union(int p, int q);
+
+
+    public void Print(int [] id){
+
+        for(int i = 0;i < id.length;i++){
+            StdOut.printf("%-2d",i);
+        }
+        StdOut.println();
+        for(int k:id)
+            StdOut.printf("%-2d",k);
+        StdOut.println();
+        StdOut.println("----------------------");
+
+    }
 }

@@ -46,7 +46,7 @@ public class UFquickfind extends UF {
     public static void main(String [] args){
 
         //解决动态连通性问题
-        int [] point = In.readInts("src\\CH1\\Data\\tinyUF.txt");     //读取数据
+        int [] point = In.readInts("src\\CH1\\Data\\tinyUF1.5.1.txt");     //读取数据
         StdOut.print("触点数量："+point[0]+"\n");
         UFquickfind ufb = new UFquickfind(point[0]);  //初始化N个分量
         int num=1;
@@ -62,23 +62,10 @@ public class UFquickfind extends UF {
             }
             ufb.union(p,q);                        //归并分量
             StdOut.print(" connecting..."+"\n");                 //打印连接
-
-            for(int i = 0;i < id.length;i++){
-                StdOut.printf("%-2d",i);
-            }
-            StdOut.println();
-            for(int k:id)
-                StdOut.printf("%-2d",k);
-            StdOut.println();
+            ufb.Print(id);
         }
         StdOut.println("----------------------");
-        for(int i = 0;i < id.length;i++){
-                StdOut.printf("%-2d",i);
-            }
-            StdOut.println();
-            for(int k:id)
-                StdOut.printf("%-2d",k);
-            StdOut.println();
+        ufb.Print(id);
 
         StdOut.print(ufb.count+" components; ");
         StdOut.println( ufb.linknum+" links");
