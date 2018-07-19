@@ -1,5 +1,6 @@
 package CH1.CH1_5;
 
+import CH1.Tools.Graph.DrawXYAxis;
 import CH1.Tools.Stopwatch;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
@@ -24,12 +25,16 @@ import edu.princeton.cs.algs4.StdOut;
  * CopyRight © 2018-2020,FlashXT & turboMan . All Right Reserved.
  * *********************************************************************************/
 
-public class UFquickunion extends UF {
+public class QUSharingCostGraph extends UF {
     private  static int[] id;       //分量id(以触点作为索引)
     private  int count;             //分量数量
     private  int linknum;           //连接数量
+    private  static int arrayAccessNum = 0; //访问数组ID的次数
+    private  static int findNum=0;
+    private  static int temp = arrayAccessNum;
+    private  static int lastNum = 0;
 
-    public UFquickunion(int N){
+    public QUSharingCostGraph(int N){
         count = N;
         linknum = 0;
         id = new int[N];
@@ -38,8 +43,13 @@ public class UFquickunion extends UF {
     }
 
     public int find(int p) {
+        findNum++;
+        while(id[p]!= p){
+            p=id[p];
+            arrayAccessNum+=2;
+        }
+        arrayAccessNum+=1;
 
-        while(id[p]!= p) p=id[p];
         return p;
     }
 
@@ -62,30 +72,44 @@ public class UFquickunion extends UF {
         Stopwatch time = new Stopwatch();
 
         //解决动态连通性问题
-        int [] point = In.readInts("src\\CH1\\Data\\tinyUF1.5.1.txt");     //读取数据
+        int [] point = In.readInts("src\\CH1\\Data\\mediumUF.txt");     //读取数据
         StdOut.print("触点数量："+point[0]+"\n");
-        UFquickunion ufu = new UFquickunion(point[0]);  //初始化N个分量
+        QUSharingCostGraph qfu = new QUSharingCostGraph(point[0]);  //初始化N个分量
         int num=1;
-        while(num<point.length){
+        int lastfindNum;
+        DrawXYAxis xyAxis = new DrawXYAxis(1300,1000);
+        while((num+1)/2<(point.length+1)/2){
 
+
+
+            temp = arrayAccessNum-lastNum;
+            lastNum = arrayAccessNum;
+            lastfindNum = findNum;
             int p = point[num];               //读取整数对
-            int q = point[++num];
-            num++;
-            StdOut.print("("+p+","+q+"):");
-            if(ufu.connected(p,q)){
-                StdOut.println(" connected.");
+            int q = point[num+1];
+
+             findNum +=2;
+            if(qfu.connected(p,q)){
+                StdOut.println(findNum+"---"+temp/(findNum - lastfindNum));
+                xyAxis.drawPoint((num+1)/2,temp/(findNum - lastfindNum));
+                num+=2;
                 continue; //如果已经连通则忽略
             }
-            ufu.union(p,q);                        //归并分量
-            StdOut.print(" connecting..."+"\n");                 //打印连接
+            qfu.union(p,q);                        //归并分量
+            findNum +=2;
 
-            ufu.Print(id);
+            StdOut.println(findNum+"---"+temp/(findNum - lastfindNum));
+            xyAxis.drawPoint((num+1)/2,temp/(findNum - lastfindNum));
+            num+=2;
+
+
         }
 
-        ufu.Print(id);
 
-        StdOut.print(ufu.count+" components; ");
-        StdOut.println( ufu.linknum+" links");
+
+        StdOut.print(qfu.count+" components; ");
+        StdOut.println( qfu.linknum+" links");
         StdOut.println(time.elapsedTime()+"s");
+        StdOut.println(findNum);
     }
  }

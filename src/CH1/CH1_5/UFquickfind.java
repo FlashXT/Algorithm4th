@@ -4,7 +4,7 @@ import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
 /********************************************************************************
- * 简介：算法第四版1.5，union-find基本算法:quick-find
+ * 简介：算法第四版1.5，union-find基本算法:quick-find（同课后CH1.5.7题）
  * Author：FlashXT;
  * Date:2018.6.30,Saturday;
  * CopyRight © 2018-2020,FlashXT & turboMan . All Right Reserved.

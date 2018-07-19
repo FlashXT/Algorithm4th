@@ -5,29 +5,26 @@ import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
 /*************************************************************************************
- * 简介：算法第四版1.5,quick-union改进；
- * 思路：  幸好,我们只需简单地修改 quick- union算法就能保证像这样的糟糕情况不再出现。与其在union()
- *      中随意将一棵树连接到另一棵树,我们现在会记录每一棵树的大小并总是将较小的树连接!到较大的树上。
- *      这项改动需要添加一个数组和一些代码来记录树中的节点数,但它能够大大改进算法的效率。我们将它称为
- *      加权 quick-union算法.
+ * 简介：算法第四版1.5,CH1.5.14；
+ * 思路：加权 quick-union算法,与书中的加权不同的是，权重采用数的高度，而不是节点数目；
  * Author：FlashXT;
  * Date:2018.7.1,Sunday;
  * CopyRight © 2018-2020,FlashXT & turboMan . All Right Reserved.
  * ***********************************************************************************/
 
-public class Weightedquickunion {
+public class Weighted_high_quickunion {
     private static int[] id;       //父链接数组(由触点索引)
     private int[] sz;       //（由触点索引的）各个根节点对应的分量的大小
     private  int count;             //分量数量
     private  int linknum;           //连接数量
 
-    public Weightedquickunion(int N){
+    public Weighted_high_quickunion(int N){
         count = N;
         linknum = 0;
         id = new int[N];
         sz = new int[N];
         for (int i = 0; i < N; i++)
-        { id[i] = i;sz[i]=1;}
+        { id[i] = i;sz[i]=0;}
     }
 
     public int count(){return count;}
@@ -47,8 +44,8 @@ public class Weightedquickunion {
         if (proot == qroot) return;
         //将小树的根节点连接到大树的根节点上
         else {
-            if(sz[proot] > sz[qroot]){ id[qroot] =proot;sz[proot]+=sz[qroot]; }
-            else{ id[proot] = qroot;sz[qroot]+=sz[proot];}
+            if(sz[proot] > sz[qroot]){ id[qroot] =proot;sz[proot] = sz[proot]>sz[qroot]+1 ? sz[proot]:sz[qroot]+1; }
+            else{ id[proot] = qroot;sz[qroot] = sz[qroot]>sz[proot]+1 ? sz[qroot]:sz[proot]+1;}
 
             linknum++;
             count--;
@@ -65,6 +62,13 @@ public class Weightedquickunion {
             StdOut.printf("%-2d",k);
         StdOut.println();
         StdOut.println("----------------------");
+        for(int i = 0;i < id.length;i++){
+            StdOut.printf("%-2d",i);
+        }
+        StdOut.println();
+        for(int k:sz)
+            StdOut.printf("%-2d",k);
+        StdOut.println("\n======================");
     }
     public static void main(String [] args){
 
@@ -72,7 +76,7 @@ public class Weightedquickunion {
         //解决动态连通性问题
         int [] point = In.readInts("src\\CH1\\Data\\tinyUF1.5.1.txt");     //读取数据
         StdOut.print("触点数量："+point[0]+"\n");
-        Weightedquickunion wfu = new Weightedquickunion(point[0]);  //初始化N个分量
+        Weighted_high_quickunion wfu = new Weighted_high_quickunion(point[0]);  //初始化N个分量
         int num=1;
         while(num<point.length){
 
@@ -87,6 +91,7 @@ public class Weightedquickunion {
             wfu.union(p,q);                        //归并分量
             StdOut.print(" connecting..."+"\n");                 //打印连接
             wfu.Print();
+
         }
         StdOut.println("----------------------");
         wfu.Print();

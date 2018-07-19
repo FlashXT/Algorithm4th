@@ -17,6 +17,8 @@ import edu.princeton.cs.algs4.StdOut;
  *     也就是说,使用路径压缩的加权 quick- union算法的每个操作在在最坏情况下(即均摊后)都不是常数级别
  *     的，而且不存在其他算法能够保证unoin-find算法的所有操作在均摊后都是常数级别的（在cell-probe
  *     模型下）。使用路径压缩的加权quick-union算法已经是对于这个问题能够给出的最优解了。
+ *
+ *     （同课后CH1.5.13题）
  * Author：FlashXT;
  * Date:2018.7.1,Sunday;
  * CopyRight © 2018-2020,FlashXT & turboMan . All Right Reserved.
