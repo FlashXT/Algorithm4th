@@ -44,7 +44,7 @@ public class TwoWaysInsertionSort {
                     mid = (low + high)/2;
 
                 }
-                while()
+                while(  )
                 temp[mid] = data[i] ;
                 first = (first-1+temp.length)%temp.length;
             }
