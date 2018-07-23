@@ -14,7 +14,7 @@ import edu.princeton.cs.algs4.StdOut;
 
 public class BinaryInsertionSort {
     public static void main(String [] args) {
-        int[] data = {34, 27, 25, 24, 24, 18, 100, 7, 9 ,123};
+        int[] data = {34, 27, 25, 24, 24, 18, 100, 7, 9 , 7,123,6};
 
         int i, j, temp;
         for (i = 1; i < data.length; i++) {
