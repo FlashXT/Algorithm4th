@@ -10,7 +10,7 @@
  * CopyRight © 2018-2020,FlashXT & turboMan . All Right Reserved.
  * ******************************************************************************/
 
-package CH2.InsertionSort;
+package CH2.CH2_1_InsertionSort;
 
 import edu.princeton.cs.algs4.StdOut;
 
